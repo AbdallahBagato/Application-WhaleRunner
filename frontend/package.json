@@ -1,0 +1,14 @@
+{
+  "name": "whale-runner-frontend",
+  "version": "1.0.0",
+  "description": "Whale Runner - Tier 1: Node.js server for the game UI (HTML/CSS/JS) with /api proxy to the Flask backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3"
+  }
+}
