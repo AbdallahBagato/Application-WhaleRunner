@@ -1,0 +1,40 @@
+services:
+  frontend:
+    container_name: frontend-runner
+    image: bagato220/frontendhti:latest
+    ports: 
+      - "8080:8080"
+    depends_on:
+      - api
+    networks:
+      - game-network
+  
+  api:
+    container_name: backend-runner
+    image: bagato220/backendhti:latest
+    networks:
+      - game-network
+    depends_on:
+      - database
+    environment:
+      - DB_HOST=database
+      - DB_PASSWORD=mysecretpassword
+  database:
+    container_name: postgres-db
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_USER=whale
+      - POSTGRES_DB=whalerunner
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - game-network
+
+  
+networks:
+  game-network:
+    driver: bridge
+
+volumes:
+  db-data:
