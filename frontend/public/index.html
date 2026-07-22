@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐳 Whale Runner — Escape the Matrix from Hell</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🐳 Whale Runner</h1>
+  <div class="tag">Jump over the Matrix-from-Hell fires and the bugs. Ship the container. Save your score.</div>
+
+  <div id="wrap">
+    <canvas id="game" width="700" height="260"></canvas>
+    <div id="board">
+      <h2>🏆 Top 10 Captains</h2>
+      <ol id="scores"><li><span>loading…</span><span></span></li></ol>
+      <div class="hint">⬆️ / Space / Tap = jump<br>Scores live in a <b>PostgreSQL container</b> on a <b>named volume</b> — remove the containers, the leaderboard survives.</div>
+    </div>
+  </div>
+
+  <dialog id="gameover">
+    <h2>💥 Container crashed!</h2>
+    <p id="finalScore" class="final"></p>
+    <input id="player" maxlength="20" placeholder="Your captain name" autocomplete="off">
+    <br>
+    <button id="save">Push score to the registry 🚀</button>
+  </dialog>
+
+  <footer>3-tier demo: Node.js (frontend) → Flask API → PostgreSQL · built &amp; shipped with Docker 🐳</footer>
+
+<script src="game.js"></script>
+</body>
+</html>

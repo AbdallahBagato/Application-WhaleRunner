@@ -1,0 +1,92 @@
+/* Whale Runner — game styles (Tier 1) */
+:root {
+  --ocean: #065A82;
+  --deep:  #21295C;
+  --foam:  #CADCFC;
+  --fire:  #F96167;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--deep) 0%, var(--ocean) 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1   { font-size: 2rem; margin-bottom: 4px; }
+.tag { color: var(--foam); margin-bottom: 14px; font-style: italic; }
+
+#wrap {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+canvas {
+  background: #eaf6ff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+  max-width: 100%;
+  touch-action: manipulation;
+}
+
+#board {
+  background: rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 260px;
+  backdrop-filter: blur(4px);
+}
+#board h2 { font-size: 1.1rem; margin-bottom: 10px; color: var(--foam); }
+
+#scores li {
+  list-style: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  font-size: .95rem;
+}
+#scores li:nth-child(odd) { background: rgba(255, 255, 255, .06); }
+#scores li:first-child    { background: var(--fire); font-weight: bold; }
+
+.hint { margin-top: 12px; font-size: .85rem; color: var(--foam); }
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  background: #fff;
+  color: var(--deep);
+}
+dialog::backdrop { background: rgba(0, 0, 0, .6); }
+dialog .final    { margin-top: 6px; }
+dialog input {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 2px solid var(--ocean);
+  border-radius: 8px;
+  margin: 10px 0;
+  width: 200px;
+  text-align: center;
+}
+dialog button {
+  padding: 8px 20px;
+  font-size: 1rem;
+  background: var(--ocean);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+dialog button:hover { background: var(--deep); }
+
+footer { margin-top: 16px; font-size: .8rem; color: var(--foam); text-align: center; }
